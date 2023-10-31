@@ -20,7 +20,16 @@ public class GameUtilities {
 
         return GameState.ACTIVE;
     }
+    public static TicTacToe getCopyOfGameBoard(){
+        Symbol[][] boardGame = GameManager.getInstance().getBoard().getBoard();
+        Symbol[][] boardCopy = new Symbol[GameUtilities.BOARD_SIZE][GameUtilities.BOARD_SIZE];
 
+        for(int i = 0; i < GameUtilities.BOARD_SIZE; i++){
+            for(int j = 0; j < GameUtilities.BOARD_SIZE; j++) boardCopy[i][j] = boardGame[i][j];
+        }
+
+        return new TicTacToe(boardCopy);
+    }
     private static boolean checkRowForWin(Symbol[][] board, Symbol search){
         Set lookup;
 

@@ -1,15 +1,13 @@
 package com.brianmanesis.tictactoe;
 
-import com.brianmanesis.tictactoe.constants.Symbol;
-import com.brianmanesis.tictactoe.game.GameUtilities;
+import com.brianmanesis.tictactoe.build.GameBuilder;
+import com.brianmanesis.tictactoe.game.GameManager;
 
 public class TicTacToeApplication {
 
     public static void main(String[] args) {
-        System.out.println(GameUtilities.checkGameStatus(new Symbol[][] {
-                {Symbol.O,Symbol.O,Symbol.X},
-                {Symbol.X,Symbol.X,Symbol.O},
-                {Symbol.O,Symbol.X,Symbol.O}
-        }));
+        GameManager game = new GameBuilder().build();
+
+        game.start();
     }
 }

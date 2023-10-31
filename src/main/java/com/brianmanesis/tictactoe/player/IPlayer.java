@@ -1,6 +1,8 @@
 package com.brianmanesis.tictactoe.player;
 
+import com.brianmanesis.tictactoe.game.GameManager;
+
 public interface IPlayer {
 
-    public void move();
+    void playerMove(GameManager game);
 }
